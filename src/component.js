@@ -1,19 +1,19 @@
-import React from "react";
+// import React from "react";
 
 
-function HomePage(props) {
-    // debugger
+// function HomePage(props) {
+//     // debugger
 
-    return (
+//     return (
         
-        <div>
-            <h1>{props.pageTitle}</h1>
-            <div>
-                <img src={props.imgSrc} />
-            </div>
-        </div>
-    );
-}
+//         <div>
+//             <h1>{props.pageTitle}</h1>
+//             <div>
+//                 <img src={props.imgSrc} />
+//             </div>
+//         </div>
+//     );
+// }
 
 
-export default HomePage;
+// export default HomePage;

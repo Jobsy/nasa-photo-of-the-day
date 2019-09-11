@@ -3,6 +3,7 @@ import axios from 'axios';
 import HomePage from "./component";
 import {Header} from "./components/header";
 import {Body} from "./components/body";
+import {Footer} from "./components/footer";
 import "./App.css";
 
 
@@ -37,9 +38,10 @@ function App() {
         <Header headerAndTitle = {data.title}/>
         {/* <h2></h2> */}
         {/* <img  /> */}
-        <Body imgSrc={data.url} paragraph={data.explanation} />
-        <h4>{data.copyright}</h4>
-        <h3>{data.date}</h3>
+        <Body imgSrc = {data.url} paragraph ={ data.explanation} />
+        {/* <h4>{}</h4>
+        <h3>{data.date}</h3> */}
+        <Footer foooterCopyright = {data.copyright} footerDate = {data.date}/>
       </ul>
     </>
   );
