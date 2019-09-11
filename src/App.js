@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-import HomePage from "./component";
-import {Header} from "./components/header";
-import {Body} from "./components/body";
-import {Footer} from "./components/footer";
+import { Header } from "./components/Header";
+import { Body } from "./components/Body";
+import { Footer } from "./components/Footer";
 import "./App.css";
 
+//       Read through the instructions in the README.md file to build your NASA
+//       app! Have fun 🚀!
 
 function App() {
-  // debugger
-
-
-
-
-
-  // function App() {
+ 
   const [data, setData] = useState({ hits: [] });
-  // const [query, setQuery] = useState("react");
 
   useEffect(() => {
     const fetchData = () => {
@@ -31,31 +25,17 @@ function App() {
 
     fetchData();
   }, []);
-  // debugger
+
   return (
     <>
       <ul>
-        <Header headerAndTitle = {data.title}/>
-        {/* <h2></h2> */}
-        {/* <img  /> */}
-        <Body imgSrc = {data.url} paragraph ={ data.explanation} />
-        {/* <h4>{}</h4>
-        <h3>{data.date}</h3> */}
-        <Footer foooterCopyright = {data.copyright} footerDate = {data.date}/>
+        <Header headerAndTitle={data.title} />
+        <Body imgSrc={data.url} paragraph={data.explanation} />
+        <Footer footerCopyright={data.copyright} footerDate={data.date} />
       </ul>
     </>
   );
-  // }
 
-  // return (
-  //   <div className="App">
-  //     <p>
-  //       Read through the instructions in the README.md file to build your NASA
-  //       app! Have fun 🚀!
-  //     </p>
-  //     <HomePage pageTitle = {"title"} imgSrc =  {"image source"}/>
-  //   </div>
-  // );
 }
 
 export default App;
