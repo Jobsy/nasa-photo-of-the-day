@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import HomePage from "./component";
 import {Header} from "./components/header";
+import {Body} from "./components/body";
 import "./App.css";
 
 
@@ -35,8 +36,8 @@ function App() {
       <ul>
         <Header headerAndTitle = {data.title}/>
         {/* <h2></h2> */}
-        <img src={data.url} />
-        <p>{data.explanation}</p>
+        {/* <img  /> */}
+        <Body imgSrc={data.url} paragraph={data.explanation} />
         <h4>{data.copyright}</h4>
         <h3>{data.date}</h3>
       </ul>
