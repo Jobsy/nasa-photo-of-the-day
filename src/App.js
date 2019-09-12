@@ -9,7 +9,7 @@ import "./App.css";
 //       app! Have fun 🚀!
 
 function App() {
- 
+
   const [data, setData] = useState({ hits: [] });
 
   useEffect(() => {
@@ -26,16 +26,20 @@ function App() {
     fetchData();
   }, []);
 
-  return (
-    <>
-      <ul>
-        <Header headerAndTitle={data.title} />
-        <Body imgSrc={data.url} paragraph={data.explanation} />
-        <Footer footerCopyright={data.copyright} footerDate={data.date} />
-      </ul>
-    </>
-  );
-
+  // if (!data) {
+  //   return <h3>Loading...</h3>;
+  // }
+  // else {
+    return (
+      <>
+        <ul>
+          <Header headerAndTitle={data.title} />
+          <Body imgSrc={data.url} paragraph={data.explanation} />
+          <Footer footerCopyright={data.copyright} footerDate={data.date} />
+        </ul>
+      </>
+    );
+  // }
 }
 
 export default App;
