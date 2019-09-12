@@ -2,7 +2,7 @@ import React from "react";
 
 export const Header = function (props) {
 
-    if (!props.headerAndTitle) {
+    if (!props.headerTitleAndInput) {
         if (props.error === 404) {
             return <h3>Sorry, can't fetch data. Check your address and resend</h3>;
         }
@@ -11,8 +11,11 @@ export const Header = function (props) {
     else {
         return (
             <>
-                {/* <h1>Astronomy Picture of the Day</h1> */}
-                <h2>{props.headerAndTitle}</h2>
+                <div className="header">
+                    <h2>{props.headerTitleAndInput}</h2>
+                    <input type="text" value={props.query} onChange={props.setQuery} />
+                    {/* <input value={query} onChange={e => setQuery(e.target.value)} /> */}
+                </div>
             </>
         );
     }

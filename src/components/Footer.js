@@ -6,8 +6,10 @@ export const Footer = function (props) {
 
     return (
         <>
-            <h4>{props.footerCopyright}</h4>
-            <h3>{props.footerDate}</h3>
+            <div className="footer">
+                <h2>{props.footerCopyright}</h2>
+                <h3>{props.footerDate}</h3>
+            </div>
         </>
     );
 };
