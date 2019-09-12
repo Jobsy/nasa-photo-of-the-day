@@ -11,34 +11,36 @@ import "./App.css";
 function App() {
 
   const [data, setData] = useState({ hits: [] });
+  const [query, setQuery] = useState("2019-09-11");
 
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
+        .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=" + query)
         .then(res => {
           setData(res.data);
-          console.log(res.data)
         }
         );
     };
-
     fetchData();
-  }, []);
+  }, [query]);
+
 
   // if (!data) {
   //   return <h3>Loading...</h3>;
   // }
   // else {
-    return (
-      <>
-        <ul>
-          <Header headerAndTitle={data.title} />
-          <Body imgSrc={data.url} paragraph={data.explanation} />
-          <Footer footerCopyright={data.copyright} footerDate={data.date} />
-        </ul>
-      </>
-    );
+  return (
+    <>
+      <input value={query} onChange={e => setQuery(e.target.value)} />
+      <ul>
+        <h1>Astronomy Picture of the Day</h1>
+        <Header headerAndTitle={data.title} />
+        <Body imgSrc={data.url} paragraph={data.explanation} />
+        <Footer footerCopyright={data.copyright} footerDate={data.date} />
+      </ul>
+    </>
+  );
   // }
 }
 

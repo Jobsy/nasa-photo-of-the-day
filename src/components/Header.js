@@ -8,7 +8,7 @@ export const Header = function (props) {
     else {
         return (
             <>
-                <h1>Astronomy Picture of the Day</h1>
+                {/* <h1>Astronomy Picture of the Day</h1> */}
                 <h2>{props.headerAndTitle}</h2>
             </>
         );
