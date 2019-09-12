@@ -1,4 +1,7 @@
+
 import React from "react";
+import { HeaderStyle, InputStyle } from "./style.js"
+
 
 export const Header = function (props) {
 
@@ -11,11 +14,12 @@ export const Header = function (props) {
     else {
         return (
             <>
-                <div className="header">
+                {/* <div className="header"> */}
+                <HeaderStyle>
                     <h2>{props.headerTitleAndInput}</h2>
-                    <input type="text" value={props.query} onChange={props.setQuery} />
-                    {/* <input value={query} onChange={e => setQuery(e.target.value)} /> */}
-                </div>
+                    <InputStyle type="text" value={props.query} onChange={props.setQuery} />
+                </HeaderStyle>
+                {/* </div> */}
             </>
         );
     }
