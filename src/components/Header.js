@@ -9,6 +9,9 @@ export const Header = function (props) {
         if (props.error === 404) {
             return <h3>Sorry, can't fetch data. Check your address and resend</h3>;
         }
+        else if (props.error === 400) {
+            return <h3>Ensure the date is correctly typed in this format "yyyy-mm-dd"</h3>;
+        }
         return <h3>Loading...</h3>;
     }
     else {
