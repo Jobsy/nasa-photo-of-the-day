@@ -14,12 +14,10 @@ export const Header = function (props) {
     else {
         return (
             <>
-                {/* <div className="header"> */}
                 <HeaderStyle>
                     <h2>{props.headerTitleAndInput}</h2>
                     <InputStyle type="text" value={props.query} onChange={props.setQuery} />
                 </HeaderStyle>
-                {/* </div> */}
             </>
         );
     }

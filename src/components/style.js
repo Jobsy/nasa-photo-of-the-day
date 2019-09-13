@@ -21,7 +21,7 @@ export const HeaderStyle = styled.div`
     justify-content: space-between;
   `;
 
-export const FooterStyle = HeaderStyle
+export const FooterStyle = HeaderStyle;
 
 export const InputStyle = styled.input`
     padding: 12px 20px;

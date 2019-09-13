@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Header } from "./components/Header";
 import { Body } from "./components/Body";
 import { Footer } from "./components/Footer";
-import { Container, Wrapper } from "./components/style"
+import { Container, Wrapper } from "./components/style";
 
 //       Read through the instructions in the README.md file to build your NASA
 //       app! Have fun 🚀!
