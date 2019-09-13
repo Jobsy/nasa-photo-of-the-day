@@ -1,9 +1,10 @@
+
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { Header } from "./components/Header";
 import { Body } from "./components/Body";
 import { Footer } from "./components/Footer";
-import "./App.css";
+import { Container, Wrapper } from "./components/style";
 
 //       Read through the instructions in the README.md file to build your NASA
 //       app! Have fun 🚀!
@@ -19,29 +20,26 @@ function App() {
         .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY&date=" + query)
         .then(res => {
           setData(res.data);
-        }
-        );
+        })
+        .catch(error => {
+          setData(error.response.status)
+        })
     };
     fetchData();
   }, [query]);
 
-
-  // if (!data) {
-  //   return <h3>Loading...</h3>;
-  // }
-  // else {
   return (
     <>
-      <input value={query} onChange={e => setQuery(e.target.value)} />
-      <ul>
-        <h1>Astronomy Picture of the Day</h1>
-        <Header headerAndTitle={data.title} />
-        <Body imgSrc={data.url} paragraph={data.explanation} />
-        <Footer footerCopyright={data.copyright} footerDate={data.date} />
-      </ul>
+      <Wrapper>
+        <Container>
+          <h1 className="">Astronomy Picture of the Day</h1>
+          <Header headerTitleAndInput={data.title} error={data} query={query} setQuery={e => setQuery(e.target.value)} />
+          <Body imgSrc={data.url} paragraph={data.explanation} />
+          <Footer footerCopyright={data.copyright} footerDate={data.date} />
+        </Container>
+      </Wrapper>
     </>
   );
-  // }
 }
 
 export default App;
